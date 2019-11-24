@@ -8,12 +8,13 @@ package com.share.solution.difficulty.one;
  * 输入: 121
  * 输出: true
  *
+ * 思路： 拿到x的倒叙 然后比较
  * @author Lgq create on 2019/11/21
  **/
 public class IsPalindrome {
 
 
-    public boolean isPalindrome(int x) {
+    public static boolean isPalindrome(int x) {
         if (x < 0) {
             return false;
         }
@@ -32,5 +33,23 @@ public class IsPalindrome {
         }
         return true;
 
+    }
+    public static boolean isPalindrome2(int x) {
+        if(x < 0)
+            return false;
+        int cur = 0;
+        int num = x;
+        while(num != 0) {
+            cur = cur * 10 + num % 10;
+            num /= 10;
+        }
+        return cur == x;
+    }
+    public static void main(String[] args) {
+        System.out.println("==>"+isPalindrome(1000));
+        System.out.println("==>"+isPalindrome(1001));
+
+
+        System.out.println("==>"+ isPalindrome2(1001));
     }
 }

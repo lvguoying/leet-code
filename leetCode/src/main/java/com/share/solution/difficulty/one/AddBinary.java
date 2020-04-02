@@ -1,6 +1,5 @@
 package com.share.solution.difficulty.one;
 
-import java.math.BigInteger;
 
 /**
  * 二进制求和
@@ -16,7 +15,6 @@ import java.math.BigInteger;
  * @author Lgq create on 2020-03-26
  */
 public class AddBinary {
-
 
     public String addBinary(String a, String b) {
         StringBuilder ans = new StringBuilder();

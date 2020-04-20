@@ -16,7 +16,7 @@ public class Solution {
     private boolean isValid(String[] str) {
 
         if (str.length <= 1) {
-            return false
+            return false;
         }
 
         String left = "([,{";
@@ -24,7 +24,7 @@ public class Solution {
 
         for (int i = 0; i < str.length - 1; i++) {
             if (str[i].contains(left)) {
-                stack.push(str[i])
+                stack.push(str[i]);
             } else if (!stack.isEmpty() || stack.pop().equals(str[i])) {
                 return false;
             }

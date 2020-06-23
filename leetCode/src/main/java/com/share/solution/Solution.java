@@ -1,5 +1,6 @@
 package com.share.solution;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Stack;
 
@@ -8,9 +9,6 @@ import java.util.Stack;
  **/
 public class Solution {
 
-    public static void main(String[] args) {
-        System.out.println("Hello Lee Code");
-    }
 
 
     private boolean isValid(String[] str) {
@@ -34,5 +32,15 @@ public class Solution {
         } else {
             return false;
         }
+    }
+
+    public static void main(String[] args) {
+
+        BigDecimal a = new BigDecimal("444");
+        BigDecimal b = new BigDecimal("333");
+
+        System.out.println(a.compareTo(b));
+
+        System.out.println(1/0);
     }
 }

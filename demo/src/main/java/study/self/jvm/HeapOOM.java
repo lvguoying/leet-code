@@ -1,4 +1,4 @@
-package com.share.jvm;
+package study.self.jvm;
 
 import java.util.ArrayList;
 import java.util.List;

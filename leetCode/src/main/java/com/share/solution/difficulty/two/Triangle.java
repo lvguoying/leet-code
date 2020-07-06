@@ -12,23 +12,50 @@ public class Triangle {
 
     public static void main(String[] args) {
 
+        List<List<Integer>> triangle = new ArrayList<>();
 
+        List<Integer> list = new ArrayList<>();
+        list.add(2);
+        triangle.add(list);
 
+        List<Integer> list1 = new ArrayList<>();
+        list1.add(3);
+        list1.add(4);
+        triangle.add(list1);
+
+        List<Integer> list2 = new ArrayList<>();
+        list2.add(6);
+        list2.add(5);
+        list2.add(7);
+        triangle.add(list2);
+
+        List<Integer> list3 = new ArrayList<>();
+        list3.add(4);
+        list3.add(1);
+        list3.add(3);
+        list3.add(8);
+        triangle.add(list3);
+
+        minimumTotal(triangle);
     }
 
-    public int minimumTotal(List<List<Integer>> triangle) {
-        List<Integer> mini = new ArrayList<>();
-        for (int i = 0; i < triangle.size() - 1; i++) {
-            mini.add(0);
+    public static int minimumTotal(List<List<Integer>> triangle) {
+        // 特判
+        if (triangle == null || triangle.size() == 0) {
+            return 0;
         }
+        // dp中记录了求第i行时，第i+1的最小路径和
+        int[] dp = new int[triangle.size() + 1];
 
-        for (int i = triangle.size() - 2; i >= 0; --i) {
-            for (int j = 0; j < triangle.get(i).size(); ++j) {
-                int miniV = triangle.get(i).get(j) + Math.min(mini.get(j), mini.get(j + 1));
-                System.out.println(miniV);
-                mini.add(j, miniV);
+        for (int i = triangle.size() - 1; i >= 0; i--) {
+            List<Integer> rows = triangle.get(i);
+            for (int j = 0; j < rows.size(); j++) {
+                dp[j] = Math.min(dp[j], dp[j + 1]) + rows.get(j);
             }
         }
-        return mini.get(0);
+       for (int i : dp){
+           System.out.print(i+"---");
+       }
+        return dp[0];
     }
 }

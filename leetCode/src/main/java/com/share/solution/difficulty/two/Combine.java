@@ -26,8 +26,6 @@ public class Combine {
             findCombinations(n, k, i + 1, pre);
             pre.pop();
         }
-        String a = "";
-        a.contains()
 
         for (int i = begin; i <= n - (k - pre.size()) + 1; i++) {
             pre.push(i);
